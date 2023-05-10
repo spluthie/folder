@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        papier kamień nożyce jaszczurka spock
+    </title>
+</head>
+<body>
+    <button onclick="losowanie('1')">papier</button>
+    <button onclick="losowanie('2')">kamień</button>
+    <button onclick="losowanie('3')">nożyce</button>
+    <button onclick="losowanie('4')">jaszczurka</button>
+    <button onclick="losowanie('5')">Spock</button>
+    <div id="wyniki">wyniki</div>
+    Wygrane:<span id="wygrane"></span><br>
+    Przegrane:<span id="przegrane"></span><br>
+    Remisy:<span id="remisy"></span><br>
+    <button onclick="reset()">resetuj statystyki</button>
+
+
+    <script>
+            var wygrane=0;
+            let przegrane=0;
+            let remisy=0;
+            
+            document.getElementById("wygrane").innerHTML = wygrane;
+            document.getElementById("przegrane").innerHTML = przegrane;
+            document.getElementById("remisy").innerHTML = remisy;
+        function losowanie(x){
+            let number = Math.floor(Math.random() * 5) + 1;
+            let gracz;
+            let komputer;
+            let wynik="sus";
+
+            switch(x){
+                case '1': 
+                gracz = "papier";
+                break;
+
+                case '2': 
+                gracz = "kamień";
+                break;
+
+                case '3': 
+                gracz = "nożyce";
+                break;
+                
+                case '4': 
+                gracz = "jaszczurka";
+                break;
+
+                case '5': 
+                gracz = "Spock";
+                break;
+            }
+            switch(number){
+                case 1: 
+                komputer = "papier";
+                break;
+
+                case 2: 
+                komputer = "kamień";
+                break;
+
+                case 3: 
+                komputer = "nożyce";
+                break;
+                
+                case 4: 
+                komputer = "jaszczurka";
+                break;
+
+                case 5: 
+                komputer = "Spock";
+                break;
+            }
+            if(x==1 && number==2){
+                wygrane += 1;
+                document.getElementById("wygrane").innerHTML = wygrane;
+                document.getElementById("wyniki").innerHTML = "gracz wygrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==1 && number==5){
+                wygrane += 1;
+                document.getElementById("wygrane").innerHTML = wygrane;
+                document.getElementById("wyniki").innerHTML = "gracz wygrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==1 && number==4){
+                przegrane += 1;
+                document.getElementById("przegrane").innerHTML = przegrane;
+                document.getElementById("wyniki").innerHTML = "gracz przegrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==1 && number==3){
+                przegrane += 1;
+                document.getElementById("przegrane").innerHTML = przegrane;
+                document.getElementById("wyniki").innerHTML = "gracz przegrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==1 && number==1){
+                remisy += 1;
+                document.getElementById("remisy").innerHTML = remisy;
+                document.getElementById("wyniki").innerHTML = "remis, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==2 && number ==5){
+                przegrane += 1;
+                document.getElementById("przegrane").innerHTML = przegrane;
+                document.getElementById("wyniki").innerHTML = "gracz przegrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==2 && number==4){
+                wygrane += 1;
+                document.getElementById("wygrane").innerHTML = wygrane;
+                document.getElementById("wyniki").innerHTML = "gracz wygrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==2 && number==3){
+                wygrane += 1;
+                document.getElementById("wygrane").innerHTML = wygrane;
+                document.getElementById("wyniki").innerHTML = "gracz wygrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==2 && number==1){
+                przegrane += 1;
+                document.getElementById("przegrane").innerHTML = przegrane;
+                document.getElementById("wyniki").innerHTML = "gracz przegrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==2 && number==2){
+                remisy += 1;
+                document.getElementById("remisy").innerHTML = remisy;
+                document.getElementById("wyniki").innerHTML = "remis, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==5 && number==4){
+                przegrane += 1;
+                document.getElementById("przegrane").innerHTML = przegrane;
+                document.getElementById("wyniki").innerHTML = "gracz przegrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==5 && number==3){
+                wygrane += 1;
+                document.getElementById("wygrane").innerHTML = wygrane;
+                document.getElementById("wyniki").innerHTML = "gracz wygrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==5 && number==1){
+                przegrane += 1;
+                document.getElementById("przegrane").innerHTML = przegrane;
+                document.getElementById("wyniki").innerHTML = "gracz przegrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==5 && number==2){
+                wygrane += 1;
+                document.getElementById("wygrane").innerHTML = wygrane;
+                document.getElementById("wyniki").innerHTML = "gracz wygrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==5 && number==5){
+                remisy += 1;
+                document.getElementById("remisy").innerHTML = remisy;
+                document.getElementById("wyniki").innerHTML = "remis, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==4 && number==3){
+                przegrane += 1;
+                document.getElementById("przegrane").innerHTML = przegrane;
+                document.getElementById("wyniki").innerHTML = "gracz przegrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==4 && number==1){
+                wygrane += 1;
+                document.getElementById("wygrane").innerHTML = wygrane;
+                document.getElementById("wyniki").innerHTML = "gracz wygrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==4 && number==2){
+                przegrane += 1;
+                document.getElementById("przegrane").innerHTML = przegrane;
+                document.getElementById("wyniki").innerHTML = "gracz przegrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==4 && number==5){
+                wygrane += 1;
+                document.getElementById("wygrane").innerHTML = wygrane;
+                document.getElementById("wyniki").innerHTML = "gracz wygrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==4 && number==4){
+                remisy += 1;
+                document.getElementById("remisy").innerHTML = remisy;
+                document.getElementById("wyniki").innerHTML = "remis, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==3 && number==1){
+                wygrane += 1;
+                document.getElementById("wygrane").innerHTML = wygrane;
+                document.getElementById("wyniki").innerHTML = "gracz wygrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==3 && number==2){
+                przegrane += 1;
+                document.getElementById("przegrane").innerHTML = przegrane;
+                document.getElementById("wyniki").innerHTML = "gracz przegrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==3 && number==5){
+                przegrane += 1;
+                document.getElementById("przegrane").innerHTML = przegrane;
+                document.getElementById("wyniki").innerHTML = "gracz przegrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==3 && number==4){
+                wygrane += 1;
+                document.getElementById("wygrane").innerHTML = wygrane;
+                document.getElementById("wyniki").innerHTML = "gracz wygrał, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else if(x==3 && number==3){
+                remisy += 1;
+                document.getElementById("remisy").innerHTML = remisy;
+                document.getElementById("wyniki").innerHTML = "remis, gracz wybrał: "+gracz+", a komputer: "+komputer;
+            }
+            else{
+                alert("błąd");
+            }
+            
+        }
+        function reset(){
+            wygrane = 0;
+            przegrane = 0;
+            remisy = 0;
+            document.getElementById("wygrane").innerHTML = wygrane;
+            document.getElementById("przegrane").innerHTML = przegrane;
+            document.getElementById("remisy").innerHTML = remisy;
+        }
+            
+    </script>
+</body>
+</html>
